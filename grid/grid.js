@@ -6,14 +6,15 @@ var findIt = (grid) => {
         y: grid.length
     }
 
-    //go through each row and see if we find it
+    //go through each row and see if we find the '1'
     var xLocation = null;
     var yLocation = null;
     for (yLocation = 0; yLocation < gridSize.y; yLocation++ ) {
+        xLocation = grid[yLocation].indexOf(1) >= 0 ? grid[yLocation].indexOf(1) : null;
+        //break out earlier if we've found it already
         if (xLocation !== null) {
             break;
         }
-        xLocation = grid[yLocation].indexOf(1) >= 0 ? grid[yLocation].indexOf(1) : null;
     }
 
     //recalculate yLocation from bottom
