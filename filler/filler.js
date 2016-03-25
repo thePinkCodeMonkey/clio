@@ -35,7 +35,7 @@ class AClass {
             if (!this.funcRef[methodName]) {
                 this.funcRef[methodName] = this[methodName];
                 this[methodName] =  () => {
-                    this.callfiller(methodName);
+                    this.callfillers(methodName);
                     this.funcRef[methodName]();
                 }
             }
@@ -46,7 +46,7 @@ class AClass {
     * Checks to see if any filler is attached to a method name, invoke
     * all fillers
     */
-    callfiller(methodName) {
+    callfillers(methodName) {
         if (this.fillers[methodName]) {
             this.fillers[methodName].forEach((fillerReference) => {
                 fillerReference();
