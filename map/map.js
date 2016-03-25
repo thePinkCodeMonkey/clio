@@ -12,6 +12,17 @@ Object.prototype.map = (callback) => {
     return returnObj;
 }
 
+// implemented as an external function
+var objectMap = (object, callback) => {
+    var keys = Object.keys(object);
+    var returnObj = {};
+    keys.forEach((key) => {
+        var result = callback(key,object[key]);
+        returnObj[result[0]] = result[1];
+    });
+    return returnObj;
+};
+
 // simple test
 /*
 * simple map callback to test the new Map function
@@ -27,5 +38,5 @@ var hash = {
     b: 2,
     c: 3
 };
-var newHash = hash.map(hash, objectMapCallback);
+var newHash = objectMap(hash, objectMapCallback);
 console.log(newHash);
