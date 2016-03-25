@@ -3,7 +3,7 @@ When I first saw this question, it looked like a simple polyfill will do the tri
 
 ```javascript
 Object.prototype.map = (callback) => {
-    //iterate through class members and callback
+    //iterate through object members and callback
 }
 ```
 It turns out it's really not that simple.
