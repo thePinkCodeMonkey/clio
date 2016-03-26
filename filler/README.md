@@ -28,3 +28,4 @@ to be changing what's inside the object.
 1. What should happen if we decide to add a filler to the 'before' function?
 This will have different implications depending on one's implementation of the
 `before` function.
+    A: It turns out my implementation was too simple and does not invoke the old function references correctly.  I was not capturing the arguments and passing them onto the function references.  I couldn't get the old method reference to invoke with the correct `this` context.  The only work around I am think of at the moment is to prevent `before` from having fillers attached to.  But it is really not ideal.
